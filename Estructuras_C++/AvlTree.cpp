@@ -5,6 +5,7 @@
 using namespace std;
 
 class AVLTree {
+
   struct Node {
     Node (int v) : value(v), height(0), left(nullptr), right(nullptr) {}
     int value, height;
@@ -12,7 +13,9 @@ class AVLTree {
     Node* right;
   };
 
+//Public methods
 public:
+
   AVLTree () : _root(nullptr) {}
 
   AVLTree& insert (int value) {
@@ -34,8 +37,8 @@ public:
     return *this;
   }
 
+//Private methods
 private:
-  // left_child > parent > right_child
   void inOrder (Node* node) {
     if (node == nullptr) return;
     inOrder(node->left);
@@ -148,16 +151,10 @@ private:
 };
 
 int main () {
-  size_t n;
-  int value;
-  AVLTree tree = AVLTree();
+ 
+ //
+    return 0;
 
-  cin >> n;
-  for (int i = 0; i < n; ++i) {
-    cin >> value;
-    tree.insert(value);
-  }
 
-  tree.print();
 }
 
